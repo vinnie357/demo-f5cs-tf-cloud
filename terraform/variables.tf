@@ -25,6 +25,10 @@ variable "gce_ssh_pub_key_file" {
   description = "ssh public key for instances"
 }
 
+variable "sa-file" {
+  description = "cloud service account json"
+}
+
 # app
 variable "instanceCount" {
   description = "number of instances"
