@@ -61,10 +61,10 @@ resource "google_compute_firewall" "app" {
 
   allow {
     protocol = "tcp"
-    ports    = ["80", "443","4000"]
+    ports    = ["80", "443","3000"]
   }
   #https://clouddocs.f5.com/cloud-services/latest/f5-cloud-services-Essential.App.Protect-WorkWith.html
-  source_ranges = ["${var.adminSrcAddr}", "4.192.178.6","52.70.78.148","3.89.239.134"]
+  source_ranges = ["${var.adminSrcAddr}", "4.192.178.6/32","52.70.78.148/32","3.89.239.134/32"]
 }
 # workloads
 module "application" {
