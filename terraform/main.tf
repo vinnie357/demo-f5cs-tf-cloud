@@ -59,7 +59,7 @@ module "application" {
   # application settings #
   #======================#
   name = "${var.appName}"
-  gce_ssh_pub_key_file = "${var.sshKeyPath}"
+  gce_ssh_pub_key_file = "${var.gce_ssh_pub_key_file}"
   adminAccountName = "${var.adminAccount}"
   ext_vpc = "${google_compute_network.vpc_network_ext}"
   ext_subnet = "${google_compute_subnetwork.vpc_network_ext_sub}"
