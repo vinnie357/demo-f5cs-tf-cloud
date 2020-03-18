@@ -32,7 +32,7 @@ resource "google_compute_instance" "vm_instance" {
     # A default network is created for all GCP projects
     network    = "${var.ext_vpc.name}"
     subnetwork = "${var.ext_subnet.name}"
-    network_ip = "10.0.20.200"
+    network_ip = "10.0.30.200"
     # network = "${google_compute_network.vpc_network.self_link}"
     # enabling access config requests a public ip
     access_config {
