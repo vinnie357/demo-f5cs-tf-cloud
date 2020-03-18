@@ -53,7 +53,7 @@ resource "google_compute_firewall" "default-allow-internal-ext" {
 }
 resource "google_compute_firewall" "app" {
   name    = "${var.projectPrefix}app-firewall${random_pet.buildSuffix.id}"
-  network = "${var.ext_vpc.name}"
+  network = "${google_compute_network.vpc_network_ext.name}"
 
   allow {
     protocol = "icmp"
