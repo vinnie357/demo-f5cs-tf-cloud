@@ -51,7 +51,21 @@ resource "google_compute_firewall" "default-allow-internal-ext" {
 
   source_ranges = ["10.0.30.0/24"]
 }
+resource "google_compute_firewall" "app" {
+  name    = "${var.projectPrefix}app-firewall${random_pet.buildSuffix.id}"
+  network = "${var.ext_vpc.name}"
 
+  allow {
+    protocol = "icmp"
+  }
+
+  allow {
+    protocol = "tcp"
+    ports    = ["80", "443","4000"]
+  }
+
+  source_ranges = ["${var.adminSrcAddr}"]
+}
 # workloads
 module "application" {
   source   = "./application"
