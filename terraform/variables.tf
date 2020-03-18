@@ -2,6 +2,9 @@
 variable "projectPrefix" {
     description = "prefix for resources"
 }
+variable "GCP_PROJECT_ID" {
+  description = "project where resources are created"
+}
 # env
 variable "GCP_REGION" {
   description = "default region"
